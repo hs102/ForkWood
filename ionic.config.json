@@ -1,0 +1,7 @@
+{
+  "name": "worood",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
