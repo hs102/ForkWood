@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService } from '../fire.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(
+              public fireService : FireService,
+              
+              ) { }
 
   ngOnInit() {
+    this.fireService.callGetRedirectResult();
+  }
+
+  signUpWithGoogle(){
+    this.fireService.signInWithGoogle();
   }
 
 }
