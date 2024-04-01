@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
   constructor(public fireService : FireService) { }
 
   ngOnInit() {
+    this.fireService.callGetRedirectResult();
   }
 
   signInWithGoogle(){
