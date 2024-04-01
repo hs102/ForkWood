@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
+import { provideAuth, getAuth } from '@angular/fire/auth';
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -28,6 +30,8 @@ const firebaseConfig = {
   provideFirebaseApp(() => initializeApp(firebaseConfig)),
   // Import the AngularFireDatabaseModule to use database
   provideFirestore(() => getFirestore()),
+
+  provideAuth(() => getAuth())
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
