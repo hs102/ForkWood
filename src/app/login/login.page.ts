@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FireService } from '../fire.service';
+import { getAdditionalUserInfo, getAuth, getRedirectResult } from '@angular/fire/auth';
+import { GoogleAuthProvider } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(public fireService : FireService) { }
 
   ngOnInit() {
+  }
+
+  signInWithGoogle(){
+    this.fireService.signInWithGoogle();
   }
 
 }
